@@ -13,7 +13,7 @@ app.get("/posts/:id/comments", (req, res) => {
   res.send(commentsByPostId[req.params.id] || []);
 });
 app.post("/posts/:id/comments", (req, res) => {
-  const commentId = eandomBytes(4).tosString("hex");
+  const commentId = randomBytes(4).toString("hex");
   const { content } = req.body;
   //=> 将数据存储在评论列表中
   const comments = commentsByPostId[req.params.id] || [];
